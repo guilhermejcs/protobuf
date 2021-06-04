@@ -9,12 +9,12 @@ package br.com.zup.edu;
 import "google/protobuf/timestamp.proto";
 
 service FuncionarioService{
-  rpc cadastrar(FuncionarioRequest) returns (RespostaResponse){}
+  rpc cadastrar(FuncionarioRequest) returns (FuncionarioResponse){}
 
 }
 
 enum Cargo{
-  DEV = 0;
+  DEV = 0; // default
   QA = 1;
   GERENTE = 3;
 }
@@ -38,7 +38,7 @@ message FuncionarioRequest{
   repeated Endereco enderecos = 7;
 }
 
-message RespostaResponse{
+message FuncionarioResponse{
   string nome = 1;
   google.protobuf.Timestamp criadoEm = 2;
 
